@@ -71,12 +71,12 @@
           <button class="arrow arrow-left" aria-label="backward button"></button>
           <div class="window">
             <ul class="project-container">
-              <li><button class="project1"><img src="images/project1.png" class="project"alt="Mi primer proyecto"></button></li>
-              <li<button class="project2"><img src="images/project2.png" class="project" alt="Segundo proyecto"></button></li>
-              <li><button class="project3"><img src="images/project3.png" class="project" alt="Tercer proyecto"></button></li>
-              <li aria-hidden="true"><button class="project4" tabindex="-1"><img src="images/project4.png" class="project" alt="Cuarto proyecto"></button></li>
-              <li aria-hidden="true"><button class="project5" tabindex="-1"><img src="images/project5.png" class="project" alt="Quinto proyecto"></button></li>
-            </ul>
+              <li class="project1-container"><button class="project1 project"><img src="images/project1.png" class="project-img"alt="Mi primer proyecto"></button></li>
+              <li class="project2-container"><button class="project2 project"><img src="images/project2.png" class="project-img" alt="Segundo proyecto"></button></li>
+              <li class="project3-container"><button class="project3 project"><img src="images/project3.png" class="project-img" alt="Tercer proyecto"></button></li>
+              <li class="project4-container" aria-hidden="true"><button class="project4 project" tabindex="-1"><img src="images/project4.png" class="project-img" alt="Cuarto proyecto"></button></li>
+              <li class="project5-container" aria-hidden="true"><button class="project5 project" tabindex="-1"><img src="images/project5.png" class="project-img" alt="Quinto proyecto"></button></li>
+            </ul> 
           </div>
           <button class="arrow arrow-right" aria-label="forward button"></button>
         </div>
@@ -87,19 +87,21 @@
 
     <footer class="contact-section">
       <h2 class="header">Contacto</h2>
+      <p class="intro">Puedes usar el siguiente formulario para mandarme un mensaje</p>
       <form class="form-container">
-        <p class="form-label">Nombre<input type="text" aria-label="nombre"/> <br /></p> 
-        <p class="form-label">Correo<input type="text" aria-label="correo" /> <br /></p> 
-        <div class="message-input">Mensaje<input type="text" /> <br /></div>
+        <label class="form-label">Nombre<input type="text" aria-label="nombre" id="name"/><span class="name-error" aria-live="assertive"></span><br/></label> 
+        <label class="form-label">Correo<input type="text" aria-label="correo" /> <br /></label> 
+        <label class="message-input">Mensaje<input type="text" /> <br /></label>
         <button class="send-button">Enviar</button>
       </form>
     </footer>
 
-    <div class="notification">El formulario fue enviado sin errores</div>
+    <div class="notification" aria-live="assertive"></div>
     <div class="modal-container">
       <div class="modal">
-        Ejemplo de un proyecto mio
-        <div class="modal-project-image"></div>
+       <h2 class="header" id="modal-header" tabindex = "0">Ejemplo de un proyecto mio</h2> 
+        <img src="images/project1.png" class="modal-project-image" alt="Pantallazo de mi proyecto"></img>
+        <button class="modal-button">Cerrar</button> 
       </div>
     </div>
 

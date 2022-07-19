@@ -17,6 +17,7 @@ function clickRight() {
     getComputedStyle(document.querySelector(".project-container")).left,
     10
   );
+  
   if (currentLeft < -270) { //si el valor de izquierda es menor a -270, para de mover el contenido
     return;
   }
@@ -25,15 +26,15 @@ function clickRight() {
   switch (newValue) {
     case -270:
       document.querySelector('.project1').setAttribute("tabindex", "-1");
-      document.querySelector('.project1-container').setAttribute("aria-hidden", true);
+      document.querySelector('.project1').setAttribute("aria-hidden", true);
       document.querySelector('.project4').removeAttribute("tabindex");
-      document.querySelector('.project4-container').removeAttribute("aria-hidden")
+      document.querySelector('.project4').removeAttribute("aria-hidden")
       break;
     case -540:
       document.querySelector('.project2').setAttribute("tabindex", "-1");
-      document.querySelector('.project2-container').setAttribute("aria-hidden", "true");
+      document.querySelector('.project2').setAttribute("aria-hidden", true);
       document.querySelector('.project5').removeAttribute("tabindex");
-      document.querySelector('.project5-container').removeAttribute("aria-hidden");
+      document.querySelector('.project5').removeAttribute("aria-hidden");
       break;
     default:
       break;
@@ -54,15 +55,15 @@ function clickLeft() {
   switch (newValue) {
     case -270:
       document.querySelector('.project5').setAttribute("tabindex", "-1");
-      document.querySelector('.project5-container').setAttribute("aria-hidden", "true");
+      document.querySelector('.project5').setAttribute("aria-hidden", true);
       document.querySelector('.project2').removeAttribute("tabindex");
-      document.querySelector('.project2-container').removeAttribute("aria-hidden");
+      document.querySelector('.project2').removeAttribute("aria-hidden");
       break;
     case 0:
       document.querySelector('.project4').setAttribute("tabindex", "-1");
-      document.querySelector('.project4-container').setAttribute("aria-hidden", "true");
+      document.querySelector('.project4').setAttribute("aria-hidden", true);
       document.querySelector('.project1').removeAttribute("tabindex");
-      document.querySelector('.project1-container').removeAttribute("aria-hidden");
+      document.querySelector('.project1').removeAttribute("aria-hidden");
       break;
     default:
       break;
@@ -74,7 +75,7 @@ function validateForm(e) {
   e.preventDefault();
   const nameField = document.getElementById("name");
   if (nameField.value === ""){
-    document.getElementById("name-error").innerHTML = "! Para enviar el formulario, se necesita un nombre";
+    document.querySelector(".name-error").innerHTML = "! Para enviar el formulario, se necesita un nombre";
   } else {
     showNotification();
   }
@@ -82,7 +83,7 @@ function validateForm(e) {
 
 /** Esta funcion se llama cuando la persona hace click en el boton de enviar del formulario de contacto */
 function showNotification() {
-  document.getElementById("name-error").innerHTML = "";
+  document.querySelector(".name-error").innerHTML = "";
   document.querySelector('.form-container').reset();
   document.querySelector(".notification").style.display = "flex";
   document.querySelector(".notification").innerHTML = "El formulario fue enviado sin errores";
